@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Word Display</h1>
+    <button onclick="showRandomWord('A')">A</button>
+    <button onclick="showRandomWord('B')">B</button>
+    <button onclick="showRandomWord('C')">C</button>
+
+    <p id="randomWordDisplay"></p>
+
+    <script>
+      const wordsStartingWithA = ["Apple","Ant","Arrow","Airplane","Anchor",];
+      const wordsStartingWithB = ["Ball","Bear","Book","Butterfly","Bridge",];
+      const wordsStartingWithC = ["Cat", "Car", "Cake", "Cloud", "Clock"];
+
+
+      function showRandomWord(letter) {
+        let wordsArray = [];
+        switch (letter) {
+          case "A":
+            wordsArray = wordsStartingWithA;
+            console.log(wordsArray);
+            
+            break;
+
+          case "B":
+            wordsArray = wordsStartingWithB;
+
+            break;
+
+
+          case "C":
+            wordsArray = wordsStartingWithC;
+
+            break;
+
+          default:
+
+            wordsArray = [];
+            
+            break;
+        }
+
+        const randomIndex = Math.floor(Math.random() * wordsArray.length);
+
+        const randomWord = wordsArray[randomIndex];
+
+        document.getElementById("randomWordDisplay").textContent = `Random word starting with '${letter}': ${randomWord}`;}
+    </script>
+  </body>
+</html>
